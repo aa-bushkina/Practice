@@ -3,47 +3,48 @@ using System.IO;
 using System.Net.Http;
 using System.Text;
 using System.Text.RegularExpressions;
+using UnityEditor;
 using UnityEngine;
-using UnityEngine.UI;
 
-//"https://docs.google.com/spreadsheets/d/1VXKvao9SVMp6O4REm0i8dvQNwKti5CshEj2yW2ExWzE/export?exportFormat=csv";
-//"https://docs.google.com/spreadsheets/d/1VXKvao9SVMp6O4REm0i8dvQNwKti5CshEj2yW2ExWzE/export?exportFormat=csv&gid=1912615539";
+//https://docs.google.com/spreadsheets/d/1VXKvao9SVMp6O4REm0i8dvQNwKti5CshEj2yW2ExWzE/export?exportFormat=csv;
+//https://docs.google.com/spreadsheets/d/1VXKvao9SVMp6O4REm0i8dvQNwKti5CshEj2yW2ExWzE/export?exportFormat=csv&gid=1912615539;
 //https://docs.google.com/spreadsheets/d/1VXKvao9SVMp6O4REm0i8dvQNwKti5CshEj2yW2ExWzE/edit#gid=0
 //https://docs.google.com/spreadsheets/d/1VXKvao9SVMp6O4REm0i8dvQNwKti5CshEj2yW2ExWzE/edit#gid=1912615539
 
-public class GetLinkScript : MonoBehaviour
+public class ParseWindow : EditorWindow
 {
-    [SerializeField] private InputField _inputValues;
-    [SerializeField] private InputField _inputSuffixes;
+    public string inputBottomText;
+    public string inputTopText;
 
-    [SerializeField] private Button _parseButton;
-    [SerializeField] private Text _resultText;
-
-
-    void Start()
+    private void OnGUI()
     {
-    }
+        inputTopText = EditorGUILayout.TextField("Link with values", inputTopText);
+        inputBottomText = EditorGUILayout.TextField("Link with suffixes", inputBottomText);
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Return))
+        if (GUILayout.Button("Parse"))
         {
-            OnClick();
+            ParseTable();
         }
     }
 
-    public void OnClick()
+    [MenuItem("Window/Parse Window")]
+    public static void ShowWindow()
     {
-        var linkVal = _inputValues.text;
-        var isLinkOk = ParseInput(linkVal);
+        GetWindow(typeof(ParseWindow));
+    }
+
+    public void ParseTable()
+    {
+        var linkVal = inputTopText;
+        var isLinkOk = CheckInput(linkVal);
         if (!isLinkOk)
         {
             PrintLinkError();
             return;
         }
 
-        var linkSuff = _inputSuffixes.text;
-        isLinkOk = ParseInput(linkSuff);
+        var linkSuff = inputBottomText;
+        isLinkOk = CheckInput(linkSuff);
         if (!isLinkOk)
         {
             PrintLinkError();
@@ -54,12 +55,12 @@ public class GetLinkScript : MonoBehaviour
         var valPath = Path.Combine(folderPath, "values.csv");
         var suffPath = Path.Combine(folderPath, "suffixes.csv");
 
-        var rowsSuff = ParseSpreadsheets(linkSuff, suffPath);
+        var rowsSuff = DownloadSpreadsheets(linkSuff, suffPath);
         var suffixes = rowsSuff[0].Split(',');
         var langNum = suffixes.Length - 2;
 
 
-        var rowsValues = ParseSpreadsheets(linkVal, valPath);
+        var rowsValues = DownloadSpreadsheets(linkVal, valPath);
 
         for (var i = 2; i < langNum; i++)
         {
@@ -85,7 +86,7 @@ public class GetLinkScript : MonoBehaviour
         PrintOkMessage();
     }
 
-    private string[] ParseSpreadsheets(string link, string path)
+    private string[] DownloadSpreadsheets(string link, string path)
     {
         var gid = link.Substring(link.LastIndexOf("#gid"));
         var uri = string.Concat(
@@ -107,12 +108,13 @@ public class GetLinkScript : MonoBehaviour
         return File.ReadAllLines(path);
     }
 
-    private bool ParseInput(in string inputText)
+    private bool CheckInput(in string inputText)
     {
         if (!inputText.StartsWith("https://docs.google.com/spreadsheets/d/"))
         {
             return false;
         }
+
         if (!Uri.IsWellFormedUriString(inputText, UriKind.Absolute))
         {
             return false;
@@ -124,12 +126,14 @@ public class GetLinkScript : MonoBehaviour
     public void PrintLinkError()
     {
         //выводим окошко с ошибкой
-        _resultText.text = "Not Ok";
+        GUILayout.Label("Not ok");
+        //_resultText.text = "Not Ok";
     }
 
     public void PrintOkMessage()
     {
         //выводим окошко, что все ок
-        _resultText.text = "Ok";
+        GUILayout.Label("Ok");
+        // _resultText.text = "Ok";
     }
 }
