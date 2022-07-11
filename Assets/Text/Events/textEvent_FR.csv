@@ -1,0 +1,23 @@
+Seasons.Title78,Douce saison
+obj3784.name,Gelée lumineuse
+skin902.name,Magasin de pain d'épice
+skin1151.name,Archibald le Chef Pâtissier
+element1192.name,Délicieux muffin
+element183.name,Ventilateur à main
+Events.FlappyReskin.WindowStart.Title,Fièvre d'été
+Events.FlappyReskin.WindowStart.Description,Voici venu l'été ! Tous les personnages de Fairyland sont partis en vacances et ils ont hâte de partager leurs impressions. Mais il y a trop de lettres et pas assez de facteurs dans les relais.Nous avons besoin de vous pour livrer ces jolies enveloppes !
+Events.WindowHelp.FlappyReskin.TipText01,"Il est difficile pour les facteurs à plumes de faire face à tant de lettres. S'il vous plaît, aidez-les !"
+WindowBuyItemsVirtualVariants.TxtHead.ID,Acheter de l'énergie
+WindowBuyItemsVirtualVariants.TxtDescription.ID,Attendez que l'énergie soit reconstituée ou achetez-la maintenant
+element679.name,Fleurs magiques
+element680.name,Étoiles
+element680.desr,Livrer les lettres pour obtenir des étoiles
+element681.name,Coffre à courrier
+FlappyReskin.Main.State.Game.Chests,Coffres de courrier
+FlappyReskin.Rating.Hint.CounterItem,Étoiles collectées
+help42.page1.head,Contrôlez l'oiseau
+help42.page2.desc,Faites de votre mieux pour éviter tous les obstacles et collectez toutes les récompenses sur votre chemin.
+help42.page3.head,Livrer les lettres
+FlappyReskin.WindowEnd.Convertation.Description,Les ressources restantes ont été vendues aux habitants de la ferme !
+FlappyReskin.EventsEnergy.Frame1,"Ne vous inquiétez pas si vous n'avez plus de fleurs magiques. Au bout d'un moment, ils se reconstitueront automatiquement."
+FlappyReskin.frame1.Description,"Je suis si content de te voir ! Il y a trop de touristes dans notre ville, donc nous ne pouvons pas gérer la quantité de travail. Votre aide serait précieuse !"

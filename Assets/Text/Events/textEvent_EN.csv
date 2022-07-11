@@ -1,0 +1,23 @@
+Seasons.Title78,Sweet season
+obj3784.name,Bright jelly
+skin902.name,Gingerbread storehouse
+skin1151.name,Archibald the Pastry Chef
+element1192.name,Delicious muffin
+element183.name,Hand fan
+Events.FlappyReskin.WindowStart.Title,Summer fever
+Events.FlappyReskin.WindowStart.Description,"Here comes the summer! All Fairyland characters have gone on vacation, and they can't wait to share their impressions. But there are too many letters and not enough postmen on the post stations.We need you help with delivering these pretty envelopes!"
+Events.WindowHelp.FlappyReskin.TipText01,"It's hard for the feathered postmen to cope with so many letters. Please, help them!"
+WindowBuyItemsVirtualVariants.TxtHead.ID,Buy energy
+WindowBuyItemsVirtualVariants.TxtDescription.ID,"Wait until the energy is replenished, or buy it now"
+element679.name,Magical flowers
+element680.name,Stars
+element680.desr,Deliver the letters to get stars
+element681.name,Mail chest
+FlappyReskin.Main.State.Game.Chests,Mail chests
+FlappyReskin.Rating.Hint.CounterItem,Stars collected
+help42.page1.head,Control the bird
+help42.page2.desc,Do your best to avoid all the obstacles and collect all the stars on your way.
+help42.page3.head,Deliver the letters
+FlappyReskin.WindowEnd.Convertation.Description,The remaining envelopes were sold to the farm inhabitants.
+FlappyReskin.EventsEnergy.Frame1,"Don't worry if you ran out of magical flowers. After a while, they will replenish automatically."
+FlappyReskin.frame1.Description,"I'm so happy to see you! There are too many tourists in our town, so we can't handle with the amount of work. Your help would be invaluable!"

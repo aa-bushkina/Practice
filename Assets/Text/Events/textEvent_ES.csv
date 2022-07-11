@@ -1,0 +1,23 @@
+Seasons.Title78,Temporada dulce
+obj3784.name,Gelatina brillante
+skin902.name,Galpón de pan de jengibre
+skin1151.name,Archibald el pastelero
+element1192.name,Muffin delicioso 
+element183.name,Ventilador de mano
+Events.FlappyReskin.WindowStart.Title,Fiebre de verano
+Events.FlappyReskin.WindowStart.Description,¡Aquí viene el verano! Todos los personajes de Fairyland se han ido de vacaciones y están ansiosos por compartir sus impresiones. Pero hay demasiadas cartas y no hay suficientes carteros en las estaciones postales. ¡Necesitamos tu ayuda para entregar estos bonitos sobres!
+Events.WindowHelp.FlappyReskin.TipText01,"Es difícil para los carteros emplumados hacer frente a tantas cartas. ¡Por favor, ayúdalos!"
+WindowBuyItemsVirtualVariants.TxtHead.ID,Comprar energía
+WindowBuyItemsVirtualVariants.TxtDescription.ID,"Espera hasta que se reponga la energía, o cómprala ahora"
+element679.name,Flores mágicas
+element680.name,Estrellas
+element680.desr,Entrega las cartas para conseguir estrellas
+element681.name,Cofre de correo
+FlappyReskin.Main.State.Game.Chests,Cofres de correo
+FlappyReskin.Rating.Hint.CounterItem,Estrellas recogidas
+help42.page1.head,Controla al pájaro
+help42.page2.desc,Haz tu mejor esfuerzo para evitar todos los obstáculos y recolecta todas las estrellas en tu camino.
+help42.page3.head,Entregar las cartas
+FlappyReskin.WindowEnd.Convertation.Description,Los sobres restantes se vendieron a los habitantes de la granja.
+FlappyReskin.EventsEnergy.Frame1,"No te preocupes si te quedaste sin flores mágicas. Después de un tiempo, se repondrán automáticamente."
+FlappyReskin.frame1.Description,"¡Estoy tan feliz de verte! Hay demasiados turistas en nuestra ciudad, por lo que no podemos con la cantidad de trabajo. ¡Tu ayuda sería invaluable!"

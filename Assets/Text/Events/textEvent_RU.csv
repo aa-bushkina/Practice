@@ -1,0 +1,23 @@
+Seasons.Title78,Сезон сладостей
+obj3784.name,Сладкий пудинг
+skin902.name,Пряничный склад
+skin1151.name,Арчибальд-кондитер
+element1192.name,Волшебный маффин
+element183.name,Веер
+Events.FlappyReskin.WindowStart.Title,Летняя горячка
+Events.FlappyReskin.WindowStart.Description,Наступило тёплое лето. Все персонажи сказочной страны разъехались отдыхать и делятся впечатлениями с отдыха. Но на почте слишком много писем и слишком мало курьеров. Помогите сказочным почтальонам доставить все письма адресатам! 
+Events.WindowHelp.FlappyReskin.TipText01,Пернатым почтальонам сложно справляться с множеством писем. Помогите им!
+WindowBuyItemsVirtualVariants.TxtHead.ID,Купить энергию
+WindowBuyItemsVirtualVariants.TxtDescription.ID,"Дождитесь, пока энергия восполнится, или купите её прямо сейчас"
+element679.name,Волшебные цветы
+element680.name,Звёзды
+element680.desr,"Доставляйте письма, чтобы получать звёзды"
+element681.name,Почтовый сундук
+FlappyReskin.Main.State.Game.Chests,Почтовые сундучки
+FlappyReskin.Rating.Hint.CounterItem,Звёзд собрано
+help42.page1.head,Управляйте полётом
+help42.page2.desc,Избегайте столкновений с препятствиями на пути и старайтесь собрать как можно больше наград.
+help42.page3.head,"Доберитесь до финиша, чтобы доставить письма"
+FlappyReskin.WindowEnd.Convertation.Description,Оставшиеся конверты раскупили сказочные жители!
+FlappyReskin.EventsEnergy.Frame1,"Если закончились Волшебные цветы, нужно лишь немного подождать. Спустя некоторое время они восполнятся автоматически."
+FlappyReskin.frame1.Description,"Я очень рада тебя видеть! К нам в Изумрудный город приехало слишком много туристов, так что твоя помощь будет неоценима!"

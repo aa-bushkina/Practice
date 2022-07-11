@@ -1,0 +1,23 @@
+Seasons.Title78,Süße Jahreszeit
+obj3784.name,Helles Gelee
+skin902.name,Lebkuchenlager
+skin1151.name,Archibald der Chef-Konditor
+element1192.name,Leckerer Muffin
+element183.name,Handventilator
+Events.FlappyReskin.WindowStart.Title,Sommerfieber
+Events.FlappyReskin.WindowStart.Description,"Hier kommt der Sommer! Alle Fairyland-Charaktere sind in den Urlaub gefahren und können es kaum erwarten, ihre Eindrücke zu teilen. Aber es gibt zu viele Briefe und zu wenig Postboten auf den Poststationen.Wir brauchen Ihre Hilfe bei der Zustellung dieser hübschen Umschläge!"
+Events.WindowHelp.FlappyReskin.TipText01,So viele Briefe können die gefiederten Postboten nur schwer bewältigen. Bitte helfen Sie ihnen!
+WindowBuyItemsVirtualVariants.TxtHead.ID,Energie kaufen
+WindowBuyItemsVirtualVariants.TxtDescription.ID,"Warten Sie, bis die Energie wieder aufgefüllt ist, oder kaufen Sie diese jetzt"
+element679.name,Magische Blumen
+element680.name,Sterne
+element680.desr,"Stellen Sie die Briefe zu, um Sterne zu erhalten"
+element681.name,Briefkasten
+FlappyReskin.Main.State.Game.Chests,Briefkasten
+FlappyReskin.Rating.Hint.CounterItem,Sterne gesammelt
+help42.page1.head,Den Vogel kontrollieren
+help42.page2.desc,"Geben Sie Ihr Bestes, um alle Hindernisse zu umgehen und sammeln Sie alle Belohnungen auf Ihrem Weg."
+help42.page3.head,Briefe zustellen
+FlappyReskin.WindowEnd.Convertation.Description,Die restlichen Umschläge wurden an die Bewohner des Bauernhofs verkauft.
+FlappyReskin.EventsEnergy.Frame1,"Machen Sie sich keine Sorgen, wenn Ihnen die magischen Blumen ausgegangen sind. Nach einer Weile füllen sie sich automatisch auf."
+FlappyReskin.frame1.Description,"Ich bin so froh, Sie zu sehen! Es gibt zu viele Touristen in unserer Stadt, also können wir mit der Menge an Arbeit nicht umgehen. Ihre Hilfe wäre von unschätzbarem Wert!"

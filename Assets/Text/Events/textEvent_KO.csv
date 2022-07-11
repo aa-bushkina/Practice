@@ -1,0 +1,23 @@
+Seasons.Title78,달콤한 계절
+obj3784.name,밝은 젤리
+skin902.name,진저브레드 창고
+skin1151.name,아치볼드 페이스트리 셰프
+element1192.name,맛있는 머핀
+element183.name,손 부채
+Events.FlappyReskin.WindowStart.Title,한 여름의 열기
+Events.FlappyReskin.WindowStart.Description,여름이 왔어요! 모든 동화 나라 캐릭터는 휴가를 떠났고 자신들의 경험을 공유하기를 고대하고 있습니다. 하지만 우체국에는 편지가 너무 많고 우체부가 충분하지 않습니다.이 예쁜 편지를 배달하는 데 당신의 도움이 필요합니다!
+Events.WindowHelp.FlappyReskin.TipText01,깃털 달린 우편 배달부가 그렇게 많은 편지를 처리하는 것은 어렵습니다. 제발 도와주세요!
+WindowBuyItemsVirtualVariants.TxtHead.ID,에너지 구매
+WindowBuyItemsVirtualVariants.TxtDescription.ID,에너지가 보충될 때까지 기다리거나 지금 구매하세요.
+element679.name,마법의 꽃
+element680.name,별
+element680.desr,별을 얻으려면 편지를 배달하십시오
+element681.name,우편함
+FlappyReskin.Main.State.Game.Chests,우편함
+FlappyReskin.Rating.Hint.CounterItem,수집된 별
+help42.page1.head,새 제어
+help42.page2.desc,모든 장애물을 피하고 모든 별을 모으기 위해 최선을 다하십시오.
+help42.page3.head,편지 전달하기
+FlappyReskin.WindowEnd.Convertation.Description,남은 봍투는 농장 주민들에게 팔렸습니다!
+FlappyReskin.EventsEnergy.Frame1,마법의 꽃이 다 떨어졌다고 걱정하지 마세요. 잠시 후 자동으로 채워집니다.
+FlappyReskin.frame1.Description,만나서 정말 반가워요! 우리 마을에는 관광객이 너무 많아서 일의 양을 감당할 수 없습니다. 당신의 도움은 매우 중요합니다!

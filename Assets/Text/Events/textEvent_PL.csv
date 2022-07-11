@@ -1,0 +1,23 @@
+Seasons.Title78,Słodki sezon
+obj3784.name,Jasna galaretka
+skin902.name,Magazyn pierników
+skin1151.name,Archibald Cukiernik
+element1192.name,Pyszna babeczka
+element183.name,Wachlarz ręczny
+Events.FlappyReskin.WindowStart.Title,Letnia gorączka
+Events.FlappyReskin.WindowStart.Description,Nadchodzi lato! Wszystkie postacie z Krainy Bajek wyjechały na wakacje i nie mogą się doczekać podzielenia się swoimi wrażeniami. Ale na stacjach pocztowych jest za dużo listów i za mało listonoszy.Potrzebujemy Twojej pomocy w dostarczeniu tych ślicznych kopert!
+Events.WindowHelp.FlappyReskin.TipText01,"Pierzastym listonoszom trudno jest poradzić sobie z tyloma listami. Proszę, pomóż im!"
+WindowBuyItemsVirtualVariants.TxtHead.ID,Kup energię
+WindowBuyItemsVirtualVariants.TxtDescription.ID,"Poczekaj, aż energia się uzupełni lub kup teraz"
+element679.name,Magiczne kwiaty
+element680.name,Gwiazdy
+element680.desr,"Dostarcz listy, aby zdobyć gwiazdki"
+element681.name,Skrzynka pocztowa
+FlappyReskin.Main.State.Game.Chests,Skrzynki pocztowe
+FlappyReskin.Rating.Hint.CounterItem,Zebrane gwiazdki
+help42.page1.head,Kontroluj ptaka
+help42.page2.desc,"Zrób wszystko, co w twojej mocy, aby ominąć wszystkie przeszkody i zebrać wszystkie nagrody na swojej drodze."
+help42.page3.head,Dostarcz listy
+FlappyReskin.WindowEnd.Convertation.Description,Resztę środków sprzedano mieszkańcom gospodarstwa!
+FlappyReskin.EventsEnergy.Frame1,"Nie martw się, jeśli zabrakło Ci magicznych kwiatów. Po chwili uzupełnią się automatycznie."
+FlappyReskin.frame1.Description,"Bardzo się cieszę, że cię widzę! W naszym mieście jest zbyt wielu turystów, więc nie możemy sobie poradzić z ilością pracy. Twoja pomoc byłaby nieoceniona!"
