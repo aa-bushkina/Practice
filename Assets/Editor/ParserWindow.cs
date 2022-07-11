@@ -6,40 +6,61 @@ using System.Text.RegularExpressions;
 using UnityEditor;
 using UnityEngine;
 
-//https://docs.google.com/spreadsheets/d/1VXKvao9SVMp6O4REm0i8dvQNwKti5CshEj2yW2ExWzE/export?exportFormat=csv;
-//https://docs.google.com/spreadsheets/d/1VXKvao9SVMp6O4REm0i8dvQNwKti5CshEj2yW2ExWzE/export?exportFormat=csv&gid=1912615539;
+//Spreadsheet of values
 //https://docs.google.com/spreadsheets/d/1VXKvao9SVMp6O4REm0i8dvQNwKti5CshEj2yW2ExWzE/edit#gid=0
+//Spreadsheet of suffixes
 //https://docs.google.com/spreadsheets/d/1VXKvao9SVMp6O4REm0i8dvQNwKti5CshEj2yW2ExWzE/edit#gid=1912615539
 
-public class ParseWindow : EditorWindow
+public class ParserWindow : EditorWindow
 {
-    public string inputBottomText;
-    public string inputTopText;
+    private string inputTopText;
+    private string inputBottomText;
+
+    [MenuItem("Parse/Parse Window")]
+    public static void ShowWindow()
+    {
+        const int width = 560;
+        const int height = 300;
+        GetWindow<ParserWindow>().maxSize = new Vector2(width, height);
+        GetWindow<ParserWindow>().minSize = new Vector2(width, height);
+    }
 
     private void OnGUI()
     {
-        inputTopText = EditorGUILayout.TextField("Link with values", inputTopText);
-        inputBottomText = EditorGUILayout.TextField("Link with suffixes", inputBottomText);
+        GUILayout.BeginVertical();
+        GUILayout.Space(20);
 
-        if (GUILayout.Button("Parse"))
+        inputTopText =
+            EditorGUILayout.TextField("Link with values", inputTopText, GUILayout.Height(80),
+                GUILayout.Width(500));
+
+        GUILayout.Space(20);
+        inputBottomText =
+            EditorGUILayout.TextField("Link with suffixes", inputBottomText, GUILayout.Height(80),
+                GUILayout.Width(500));
+        GUILayout.EndVertical();
+
+        GUILayout.BeginHorizontal();
+        GUILayout.Space(240);
+        GUILayout.BeginVertical();
+        GUILayout.Space(40);
+        if (GUILayout.Button("Parse", GUILayout.Width(80), GUILayout.Height(40)))
         {
             ParseTable();
         }
+
+        GUILayout.EndHorizontal();
+        GUILayout.EndVertical();
     }
 
-    [MenuItem("Window/Parse Window")]
-    public static void ShowWindow()
-    {
-        GetWindow(typeof(ParseWindow));
-    }
 
-    public void ParseTable()
+    private void ParseTable()
     {
         var linkVal = inputTopText;
         var isLinkOk = CheckInput(linkVal);
         if (!isLinkOk)
         {
-            PrintLinkError();
+            ShowPopUp("Error! Incorrect links have been entered!");
             return;
         }
 
@@ -47,7 +68,7 @@ public class ParseWindow : EditorWindow
         isLinkOk = CheckInput(linkSuff);
         if (!isLinkOk)
         {
-            PrintLinkError();
+            ShowPopUp("Error! Incorrect links have been entered!");
             return;
         }
 
@@ -83,7 +104,7 @@ public class ParseWindow : EditorWindow
             File.WriteAllText(resPath, csv.ToString());
         }
 
-        PrintOkMessage();
+        ShowPopUp("Ok");
     }
 
     private string[] DownloadSpreadsheets(string link, string path)
@@ -110,30 +131,34 @@ public class ParseWindow : EditorWindow
 
     private bool CheckInput(in string inputText)
     {
-        if (!inputText.StartsWith("https://docs.google.com/spreadsheets/d/"))
-        {
-            return false;
-        }
-
-        if (!Uri.IsWellFormedUriString(inputText, UriKind.Absolute))
-        {
-            return false;
-        }
-
-        return true;
+        return !string.IsNullOrEmpty(inputText) && 
+               inputText.StartsWith("https://docs.google.com/spreadsheets/d/") && 
+               Uri.IsWellFormedUriString(inputText, UriKind.Absolute);
     }
 
-    public void PrintLinkError()
+    private void ShowPopUp(string mess)
     {
-        //выводим окошко с ошибкой
-        GUILayout.Label("Not ok");
-        //_resultText.text = "Not Ok";
+        var rect = new Rect(180, 0, 0, 100);
+        PopupWindow.Show(rect, new ResultPopup(mess));
+    }
+}
+
+public class ResultPopup : PopupWindowContent
+{
+    private string _mess;
+
+    public ResultPopup(string mess)
+    {
+        _mess = mess;
     }
 
-    public void PrintOkMessage()
+    public override Vector2 GetWindowSize()
     {
-        //выводим окошко, что все ок
-        GUILayout.Label("Ok");
-        // _resultText.text = "Ok";
+        return new Vector2(300, 100);
+    }
+
+    public override void OnGUI(Rect rect)
+    {
+        GUILayout.Label(_mess);
     }
 }
