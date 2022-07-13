@@ -19,37 +19,57 @@ public class ParserWindow : EditorWindow
     [MenuItem("Parse/Parse Window")]
     public static void ShowWindow()
     {
-        const int width = 560;
-        const int height = 300;
+        var width = 500;
+        var height = 300;
         GetWindow<ParserWindow>().maxSize = new Vector2(width, height);
         GetWindow<ParserWindow>().minSize = new Vector2(width, height);
     }
 
     private void OnGUI()
     {
+        
+        var textAreaStyle = new GUIStyle(GUI.skin.textField)
+        {
+            
+            wordWrap = true,
+            normal =
+            {
+                background = Texture2D.grayTexture
+            }
+        };
+
         GUILayout.BeginVertical();
-        GUILayout.Space(20);
+        GUILayout.FlexibleSpace();
+        GUILayout.Label("Enter link with values...");
+        GUILayout.BeginHorizontal();
+        GUILayout.FlexibleSpace();
+        inputTopText = GUILayout.TextArea(inputTopText, textAreaStyle, GUILayout.Height(80),
+            GUILayout.Width(400));
+        GUILayout.FlexibleSpace();
+        GUILayout.EndHorizontal();
 
-        inputTopText =
-            EditorGUILayout.TextField("Link with values", inputTopText, GUILayout.Height(80),
-                GUILayout.Width(500));
-
-        GUILayout.Space(20);
+        GUILayout.FlexibleSpace();
+        GUILayout.Label("Enter link with suffixes...");
+        GUILayout.BeginHorizontal();
+        GUILayout.FlexibleSpace();
         inputBottomText =
-            EditorGUILayout.TextField("Link with suffixes", inputBottomText, GUILayout.Height(80),
-                GUILayout.Width(500));
-        GUILayout.EndVertical();
+            GUILayout.TextArea(inputBottomText, textAreaStyle, GUILayout.Height(80),
+                GUILayout.Width(400));
+        GUILayout.FlexibleSpace();
+        GUILayout.EndHorizontal();
+        GUILayout.FlexibleSpace();
 
         GUILayout.BeginHorizontal();
-        GUILayout.Space(240);
-        GUILayout.BeginVertical();
-        GUILayout.Space(40);
+        GUILayout.FlexibleSpace();
+
         if (GUILayout.Button("Parse", GUILayout.Width(80), GUILayout.Height(40)))
         {
             ParseTable();
         }
 
+        GUILayout.FlexibleSpace();
         GUILayout.EndHorizontal();
+        GUILayout.FlexibleSpace();
         GUILayout.EndVertical();
     }
 
@@ -68,7 +88,7 @@ public class ParserWindow : EditorWindow
         isLinkOk = CheckInput(linkSuff);
         if (!isLinkOk)
         {
-            ShowPopUp("Error! Incorrect links have been entered!");
+            ShowPopUp("Error!Incorrect links have been entered!");
             return;
         }
 
@@ -131,14 +151,16 @@ public class ParserWindow : EditorWindow
 
     private bool CheckInput(in string inputText)
     {
-        return !string.IsNullOrEmpty(inputText) && 
-               inputText.StartsWith("https://docs.google.com/spreadsheets/d/") && 
+        return !string.IsNullOrEmpty(inputText) &&
+               inputText.StartsWith("https://docs.google.com/spreadsheets/d/") &&
+               inputText.Contains("/edit") &&
+               inputText.Contains("#gid") &&
                Uri.IsWellFormedUriString(inputText, UriKind.Absolute);
     }
 
     private void ShowPopUp(string mess)
     {
-        var rect = new Rect(180, 0, 0, 100);
+        var rect = new Rect(150, 50, 0, 0);
         PopupWindow.Show(rect, new ResultPopup(mess));
     }
 }
@@ -154,11 +176,21 @@ public class ResultPopup : PopupWindowContent
 
     public override Vector2 GetWindowSize()
     {
-        return new Vector2(300, 100);
+        return new Vector2(200, 200);
     }
 
     public override void OnGUI(Rect rect)
     {
-        GUILayout.Label(_mess);
+        var labelStyle = new GUIStyle(GUI.skin.label)
+        {
+            wordWrap = true,
+            alignment = TextAnchor.MiddleCenter
+            
+        };
+        GUILayout.BeginVertical();
+        GUILayout.FlexibleSpace();
+        GUILayout.Label(_mess, labelStyle);
+        GUILayout.FlexibleSpace();
+        GUILayout.EndVertical();
     }
 }
